@@ -142,6 +142,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1827195939916901779, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230401955390997425, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2514317786353457088, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -182,10 +190,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2754825882899695877, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+      propertyPath: m_Name
+      value: YellowParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754825882899695877, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3249933191529609366, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ace27adf9ddfb09419f1276132dd0cff, type: 2}
+    - target: {fileID: 4324513270536792527, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5565942355501599703, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -249,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &367866147
 AudioListener:
   m_ObjectHideFlags: 0
@@ -336,10 +356,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5510c59c46c6efd4b9399f7dd15e8991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {fileID: 0}
-  blue: {fileID: 0}
-  yellow: {fileID: 0}
-  green: {fileID: 0}
+  red: {fileID: 108044339}
+  blue: {fileID: 108044338}
+  yellow: {fileID: 108044337}
+  green: {fileID: 108044336}
+  yellowPart: {fileID: 1292758791}
+  greenPart: {fileID: 1097986679}
+  bluePart: {fileID: 630983856}
+  redPart: {fileID: 1694892742}
+--- !u!1 &630983856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4324513270536792527, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+  m_PrefabInstance: {fileID: 108044335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749350165
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749350167}
   - component: {fileID: 749350166}
+  - component: {fileID: 749350168}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -434,6 +464,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &749350168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749350165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3463ccb8b863f042b6133d292edccbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arialView: {fileID: 367866146}
+  FPS: {fileID: 920060093}
+  red: {fileID: 108044339}
+  blue: {fileID: 108044338}
+  yellow: {fileID: 108044337}
+  green: {fileID: 108044336}
+  yellowPart: {fileID: 1292758791}
+  greenPart: {fileID: 1097986679}
+  bluePart: {fileID: 630983856}
+  redPart: {fileID: 1694892742}
+  delay: 2
+  pattern: 
 --- !u!1 &920060093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -455,6 +509,10 @@ MonoBehaviour:
   blue: {fileID: 108044338}
   yellow: {fileID: 108044337}
   green: {fileID: 108044336}
+  yellowPart: {fileID: 1292758791}
+  greenPart: {fileID: 1097986679}
+  bluePart: {fileID: 630983856}
+  redPart: {fileID: 1694892742}
 --- !u!135 &920060100
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -476,6 +534,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1097986679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1827195939916901779, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+  m_PrefabInstance: {fileID: 108044335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1292758791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2754825882899695877, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+  m_PrefabInstance: {fileID: 108044335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1694892742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2230401955390997425, guid: a6906ebc26404234eb3ef7317ce59b96, type: 3}
+  m_PrefabInstance: {fileID: 108044335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1816840783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -490,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_TagString
@@ -636,6 +709,10 @@ MonoBehaviour:
   blue: {fileID: 108044338}
   yellow: {fileID: 108044337}
   green: {fileID: 108044336}
+  yellowPart: {fileID: 0}
+  greenPart: {fileID: 0}
+  bluePart: {fileID: 0}
+  redPart: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

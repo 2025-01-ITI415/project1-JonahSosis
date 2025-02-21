@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     public GameObject blue;
     public GameObject yellow;
     public GameObject green;
+    public GameObject yellowPart;
+    public GameObject greenPart;
+    public GameObject bluePart;
+    public GameObject redPart;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,24 +32,28 @@ public class Player : MonoBehaviour
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             red.gameObject.SetActive(true);
+            redPart.gameObject.SetActive(true);
 
         }
         else if (other.gameObject.CompareTag("Green Pillar"))
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             green.gameObject.SetActive(true);
+            greenPart.gameObject.SetActive(true);
 
         }
         else if (other.gameObject.CompareTag("Yellow Pillar"))
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             yellow.gameObject.SetActive(true);
+            yellowPart.gameObject.SetActive(true);
 
         }
         else if (other.gameObject.CompareTag("Blue Pillar"))
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             blue.gameObject.SetActive(true);
+            bluePart.gameObject.SetActive(true);
 
         }
     }
@@ -56,24 +64,28 @@ public class Player : MonoBehaviour
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             red.gameObject.SetActive(false);
+            redPart.gameObject.SetActive(false);
 
         }
         else if (other.gameObject.CompareTag("Green Pillar"))
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             green.gameObject.SetActive(false);
+            greenPart.gameObject.SetActive(false);
 
         }
         else if (other.gameObject.CompareTag("Yellow Pillar"))
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             yellow.gameObject.SetActive(false);
+            yellowPart.gameObject.SetActive(false);
 
         }
         else if (other.gameObject.CompareTag("Blue Pillar"))
         {
             // Make the other game object (the pick up) inactive, to make it disappear
             blue.gameObject.SetActive(false);
+            bluePart.gameObject.SetActive(false);
 
         }
     }
