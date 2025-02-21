@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - player
+  - Undefined
+  - Yellow Pillar
+  - Green Pillar
+  - Blue Pillar
+  - Red Pillar
   layers:
   - Default
   - TransparentFX

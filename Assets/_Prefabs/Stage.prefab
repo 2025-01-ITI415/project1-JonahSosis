@@ -170,7 +170,6 @@ Transform:
   - {fileID: 1088636574515097158}
   - {fileID: 9043441004196137246}
   - {fileID: 1573793945446023334}
-  - {fileID: 8455599948143603352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234916248232292579
@@ -229,7 +228,7 @@ GameObject:
   - component: {fileID: 3533615469997743209}
   m_Layer: 0
   m_Name: GreenPillar
-  m_TagString: Untagged
+  m_TagString: Green Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +248,7 @@ Transform:
   m_Children:
   - {fileID: 4392390273469488999}
   - {fileID: 2197948958764933818}
-  m_Father: {fileID: 2514317786353457088}
+  m_Father: {fileID: 1573793945446023334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &3533615469997743209
 SphereCollider:
@@ -304,6 +303,7 @@ Transform:
   - {fileID: 8392630224427844197}
   - {fileID: 6396890518216760095}
   - {fileID: 4108838354350591998}
+  - {fileID: 8455599948143603352}
   m_Father: {fileID: 2514317786353457088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2357730179184525838
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1440249517238187182}
   m_Layer: 0
   m_Name: BluePillar
-  m_TagString: Untagged
+  m_TagString: Blue Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 3120480525051089352}
   m_Layer: 0
   m_Name: RedPillar
-  m_TagString: Untagged
+  m_TagString: Red Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 2866414762386742672}
   m_Layer: 0
   m_Name: YellowPillar
-  m_TagString: Untagged
+  m_TagString: Yellow Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
