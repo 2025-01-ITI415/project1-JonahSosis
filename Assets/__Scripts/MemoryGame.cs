@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class MemoryGame : MonoBehaviour
 {
+    public Boolean nextLevel = false;
+    public Player player;
     [Header("Set Dynamically")]
     public GameObject arialView;
     public GameObject FPS;
@@ -22,12 +25,21 @@ public class MemoryGame : MonoBehaviour
     void Start()
     {
         //get random int between 1-4 inclusive
-        int randomInt = Random.Range(1, 5);
+        int randomInt = UnityEngine.Random.Range(1, 5);
         pattern=pattern+randomInt.ToString();
         DisplayPattern(pattern);
     }
     
     void DisplayPattern(string pattern)
+    {
+        int PatternLength = pattern.Length;
+        StartCoroutine(DelayedLoop());
+        Invoke(nameof(camSwitch), delay*PatternLength);
+        
+
+        // Update is called once per frame
+    }
+    IEnumerator DelayedLoop()
     {
         int PatternLength = pattern.Length;
         string tempPattern = pattern;
@@ -37,24 +49,24 @@ public class MemoryGame : MonoBehaviour
         {
             string temp = tempPattern.Substring(0, 1);
             tempPattern = tempPattern.Substring(1);
-            if(temp.Equals("1"))
+            if (temp.Equals("1"))
             {
                 red.SetActive(true);
                 redPart.SetActive(true);
-                Debug.Log("Object Activated");
+                
 
                 // Wait for 1 second
 
                 Invoke(nameof(DeactivateRed), delay);
 
                 // Deactivate the object
-                
+
             }
-            else if(temp.Equals("2"))
+            else if (temp.Equals("2"))
             {
                 yellow.SetActive(true);
                 yellowPart.SetActive(true);
-                Debug.Log("Object Activated");
+               
 
                 // Wait for 1 second
                 Invoke(nameof(DeactivateYellow), delay);
@@ -63,7 +75,7 @@ public class MemoryGame : MonoBehaviour
             {
                 blue.SetActive(true);
                 bluePart.SetActive(true);
-                Debug.Log("Object Activated");
+                
 
                 // Wait for 1 second
                 Invoke(nameof(DeactivateBlue), delay);
@@ -72,20 +84,17 @@ public class MemoryGame : MonoBehaviour
             {
                 green.SetActive(true);
                 greenPart.SetActive(true);
-                Debug.Log("Object Activated");
+                
 
                 // Wait for 1 second
                 Invoke(nameof(DeactivateGreen), delay);
             }
-            
+            yield return new WaitForSeconds(1f);
 
         }
-        Invoke(nameof(camSwitch), delay*PatternLength);
-        
 
-        // Update is called once per frame
     }
-    void camSwitch()
+        void camSwitch()
     {
         arialView.SetActive(false);
         FPS.SetActive(true);
@@ -112,10 +121,24 @@ public class MemoryGame : MonoBehaviour
     {
         green.SetActive(false);
         greenPart.SetActive(false);
-        Debug.Log("Yellow Object Deactivated");
+        Debug.Log("Green Object Deactivated");
     }
     void Update()
     {
-        
+        if(nextLevel==true)
+        {
+            
+            nextLevel=false;
+            moveFPS();
+            int randomInt = UnityEngine.Random.Range(1, 5);
+            pattern = pattern + randomInt.ToString();
+            Debug.Log("the pattern is "+pattern);
+            DisplayPattern(pattern);
+
+        }
+    }
+    void moveFPS()
+    {
+        FPS.transform.position = new Vector3(0f, 1f, 0f);
     }
 }

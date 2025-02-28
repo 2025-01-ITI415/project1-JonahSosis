@@ -351,12 +351,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367866146}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5510c59c46c6efd4b9399f7dd15e8991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pattern: 
+  playerPattern: 
+  nextInOrder: 
+  triggerExit: 1
+  FPS: {fileID: 920060093}
   gameOver: {fileID: 478800776}
   red: {fileID: 108044339}
   blue: {fileID: 108044338}
@@ -557,6 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3463ccb8b863f042b6133d292edccbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: 0
+  player: {fileID: 0}
   arialView: {fileID: 367866146}
   FPS: {fileID: 920060093}
   red: {fileID: 108044339}
@@ -587,6 +593,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pattern: 
+  playerPattern: 
+  nextInOrder: 
+  triggerExit: 1
+  FPS: {fileID: 920060093}
   gameOver: {fileID: 478800776}
   red: {fileID: 108044339}
   blue: {fileID: 108044338}
@@ -959,6 +969,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pattern: 
+  playerPattern: 
+  nextInOrder: 
+  triggerExit: 1
+  FPS: {fileID: 0}
   gameOver: {fileID: 0}
   red: {fileID: 108044339}
   blue: {fileID: 108044338}
