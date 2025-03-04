@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class PlayerTemp : MonoBehaviour
 {
+    
     private PlayerInfo playerInfo;
     private MemoryGame memoryGame;
     private Rigidbody rb;
+    [Header("Set Dynamically")]
+    public GameObject FPS;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,22 +29,22 @@ public class PlayerTemp : MonoBehaviour
         if (other.gameObject.CompareTag("Red Pillar"))
         {
             playerInfo.addPlayerPattern("1");
-            memoryGame.moveFPS();
+            FPS.transform.position = new Vector3(0f, 0.5f, 0f);
         }
         else if (other.gameObject.CompareTag("Green Pillar"))
         {
             playerInfo.addPlayerPattern("4");
-            memoryGame.moveFPS();
+            FPS.transform.position = new Vector3(0f, 0.5f, 0f);
         }
         else if (other.gameObject.CompareTag("Blue Pillar"))
         {
             playerInfo.addPlayerPattern("3");
-            memoryGame.moveFPS();
+            FPS.transform.position = new Vector3(0f, 0.5f, 0f);
         }
         else if (other.gameObject.CompareTag("Yellow Pillar"))
         {
             playerInfo.addPlayerPattern("2");
-            memoryGame.moveFPS();
+            FPS.transform.position = new Vector3(0f, 0.5f, 0f);
         }
     }
 }
