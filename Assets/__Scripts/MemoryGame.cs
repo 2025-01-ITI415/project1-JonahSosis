@@ -6,8 +6,10 @@ using UnityEngine.UIElements;
 
 public class MemoryGame : MonoBehaviour
 {
+    
     public Boolean nextLevel = false;
     public Player player;
+    private PlayerInfo playerInfo;
     [Header("Set Dynamically")]
     public GameObject arialView;
     public GameObject FPS;
@@ -24,16 +26,22 @@ public class MemoryGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerInfo = FindObjectOfType<PlayerInfo>();
         //get random int between 1-4 inclusive
         int randomInt = UnityEngine.Random.Range(1, 5);
         pattern=pattern+randomInt.ToString();
+        Debug.Log("Initial pattern"+pattern);
         DisplayPattern(pattern);
     }
     
     void DisplayPattern(string pattern)
     {
         int PatternLength = pattern.Length;
+        Debug.Log("Pattern Length:" + PatternLength);
+        //shows pattern from sky
         StartCoroutine(DelayedLoop());
+        playerInfo.setPattern();
+        //
         Invoke(nameof(camSwitch), delay*PatternLength);
         
 
@@ -41,6 +49,7 @@ public class MemoryGame : MonoBehaviour
     }
     IEnumerator DelayedLoop()
     {
+        //shows pattern from sky
         int PatternLength = pattern.Length;
         string tempPattern = pattern;
         arialView.SetActive(true);
@@ -58,7 +67,7 @@ public class MemoryGame : MonoBehaviour
                 // Wait for 1 second
 
                 Invoke(nameof(DeactivateRed), delay);
-
+                
                 // Deactivate the object
 
             }
@@ -89,7 +98,7 @@ public class MemoryGame : MonoBehaviour
                 // Wait for 1 second
                 Invoke(nameof(DeactivateGreen), delay);
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
 
         }
 
@@ -103,25 +112,25 @@ public class MemoryGame : MonoBehaviour
     {
         red.SetActive(false);
         redPart.SetActive(false);
-        Debug.Log("Red Object Deactivated");
+        
     }
     void DeactivateYellow()
     {
         yellow.SetActive(false);
         yellowPart.SetActive(false);
-        Debug.Log("Yellow Object Deactivated");
+       
     }
     void DeactivateBlue()
     {
         blue.SetActive(false);
         bluePart.SetActive(false);
-        Debug.Log("Yellow Object Deactivated");
+        
     }
     void DeactivateGreen()
     {
         green.SetActive(false);
         greenPart.SetActive(false);
-        Debug.Log("Green Object Deactivated");
+        
     }
     void Update()
     {
