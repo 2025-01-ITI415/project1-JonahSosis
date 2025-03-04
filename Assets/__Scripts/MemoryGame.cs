@@ -146,7 +146,7 @@ public class MemoryGame : MonoBehaviour
 
         }
     }
-    void moveFPS()
+    public void moveFPS()
     {
         FPS.transform.position = new Vector3(0f, 1f, 0f);
     }

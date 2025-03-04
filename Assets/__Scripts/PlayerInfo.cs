@@ -63,10 +63,11 @@ public class PlayerInfo : MonoBehaviour
         }
         else
         {
-
-            pattern = pattern.Substring(1);
-            playerPattern = "";
             Debug.Log("Correct, next round");
+            Debug.Log("Player Pattern:" + playerPattern + " Pattern:" + memoryGame.pattern);
+            pattern = pattern.Substring(1);
+            //playerPattern = "";
+            
             //start next round
         }
     }
